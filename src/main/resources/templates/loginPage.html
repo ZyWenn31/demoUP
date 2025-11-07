@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/shoes/login" method="post" th:object="${user}">
+    <input type="text" th:field="*{login}"/>
+    <input type="password" th:field="*{passwordPlain}"/>
+
+    <button type="submit" th:text="Логин"/>
+</form>
+
+<style>
+    /* Основные стили страницы */
+    body {
+        font-family: "Times New Roman", Times, serif;
+        background: linear-gradient(135deg, #7FFF00, #00FA9A);
+        color: #003300;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    /* Контейнер формы */
+    form {
+        background-color: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        width: 100%;
+        max-width: 400px; /* ограничение по ширине */
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Поля ввода */
+    input[type="text"], input[type="password"] {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        padding: 12px;
+        border: 2px solid #00FA9A;
+        border-radius: 8px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input[type="text"]:focus, input[type="password"]:focus {
+        border-color: #7FFF00;
+        outline: none;
+    }
+
+    /* Кнопка */
+    button {
+        background-color: #00FA9A;
+        color: #003300;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button:hover {
+        background-color: #7FFF00;
+        transform: scale(1.02);
+    }
+
+    /* Заголовок формы */
+    form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #003300;
+    }
+</style>
+</body>
+
+
+</html>
